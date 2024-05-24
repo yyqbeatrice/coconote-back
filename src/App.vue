@@ -1,6 +1,5 @@
 <template>
   <div>
-    <router-link to="/tab1" id="lefttag">All Notes</router-link>
     <router-view/>
   </div>
 </template>
@@ -14,21 +13,21 @@ export default {
 
 <style>
 #app {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 0;
 }
-#lefttag {
-  position: absolute;
-  left: 0px;
-  font-size: 20px;
-  margin-left: 20px;
-  margin-top: 20px;
-  color: #2c3e50;
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
+
 </style>

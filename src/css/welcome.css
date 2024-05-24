@@ -1,0 +1,60 @@
+#welcome-page > header {
+    margin-top: 2%;
+    width: 100vw;
+    height: 50px;
+    /* background-color: aqua; */
+}
+
+#welcome-icon {
+    width: 156px;
+    margin-left: 4%;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#welcome-icon img {
+    width: 50px;
+    height: 50px;
+}
+
+#welcome-icon p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#welcome-page > main {
+    width: 100vw;
+    height: 90vh;
+    /* background-color: aquamarine; */
+
+    display: flex;
+    flex-flow: column;
+    justify-content: left;
+    align-items: center;
+}
+
+#welcome-logo {
+    width: 467px;
+    height: 467px;
+}
+
+#welcome-page button {
+    width: 265px;
+    height: 80px;
+
+    font-size: 24px;
+    font-weight: bold;
+    border: 0;
+    border-radius: 20px;
+    /* margin-bottom: 3%; */
+    background-color: white;
+}
+
+#welcome-page button:hover {
+    background-color: #C3E85A;
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+}

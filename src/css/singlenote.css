@@ -1,0 +1,118 @@
+#notepage {
+    position: relative;
+    width: 354px;
+    height: 313px;
+    background: #FFFFFF;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    display: block;
+    padding: 21px 29px;
+    box-sizing: border-box;
+}
+
+
+#wrapper {
+    width: 296px;
+    height: 271px;
+    /* background-color: antiquewhite; */
+}
+
+header {
+    display: flex;
+    width: inherit;
+    height: 30px;
+    line-height: 30px;
+}
+
+.single-tag-wrapper {
+    display: flex;
+    height: inherit;
+    line-height: inherit;
+    width: 70%;
+}
+
+.single-tag {
+    height: inherit;
+    width: max-content;
+    line-height: inherit;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #60B71C;
+}
+
+.single-time {
+    height: inherit;
+    line-height: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    color: #BFBFBF;
+    width: 30%;
+}
+
+main {
+    width: inherit;
+    height: 190px;
+    /* background-color: chocolate; */
+}
+
+main h1 {
+    font-size: 20px;
+    width: 231px;
+    /* margin-top: 0px; */
+    margin-bottom: 0px;
+    text-align: left;
+    margin-left: 5px;
+}
+
+main p {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 14px;
+    text-align: left;
+    color: #BFBFBF;
+    font-weight: bold;
+    height: 143px;
+    overflow-y: hidden;
+}
+
+footer {
+    width: inherit;
+    height: 21px;
+    text-align: right;
+
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #60B71C;
+}
+
+#seperate-line {
+    width: inherit;
+    height: 21px;
+    border-width: 0px 0px 2px 0px;
+    border-color: #F6F8FA;
+    border-style: solid;
+    box-sizing: border-box;
+}
+
+#set-tag {
+    position: absolute;
+    width: inherit;
+    height: 50px;
+    top: 20%;
+    background-color: #60B71C;
+    border-radius: 5px;
+}
+
+#test-tag {
+    width: 100px;
+    height: 100px;
+    background-color:black;
+}
