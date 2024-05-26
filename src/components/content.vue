@@ -6,7 +6,7 @@
     </div>
     <div id="left">
       <div id="logo"><img src="../assets/coconote.svg" alt="logo"></div>
-      <div id="menu">
+      <div id="content-menu">
         <div class="active-item">
           <img src="../assets/all_notes_active.svg">
           <p @click="goToPage('/')">All Notes</p>
@@ -22,18 +22,20 @@
         <button @click="()=>{uploading=!uploading}" id='new-page-button'>+ New</button>
         <div class="item">
           <img src="../assets/signout.svg">
-          <p @click="goToPage('/Trash')">Sign Out</p>
+          <p @click="logout">Sign Out</p>
         </div>
       </div>
     </div>
     <div id="right">
       <div id="rightup">
-        <div id="search"><img src="../assets/search.svg" alt="search"></div>
+        <!-- <div id="search"><img src="../assets/search.svg" alt="search"></div> -->
         <div id="user">
           <p id="username">
             {{ username }}
           </p>
-          <img src="../assets/img_test.jpeg" alt="user" class="userimg">
+          <div class="userimg">
+            <img :src="avatar" alt="user">
+          </div>
         </div>
       </div>
       <div id="rightdown">
@@ -43,9 +45,11 @@
           <div id="tag2" class="tag" :class="{ 'active-tag': current_tag === '2' }" @click="handlechange('favor')">Tag2</div>
         </div>
         <div id="frame">
-          <template v-for="x in pagenum" :key="x">
-            <SingleNote v-if="x['tags'].includes(current_tag)"></SingleNote>
-            <!-- <p>{{ current_tag }}</p> -->
+          <template v-for="x in allNotes" :key="x">
+            <SingleNote v-if="x['tag'].includes(current_tag) || current_tag === null"
+            :title="x['title']"
+            :tags="x['tag']"
+            :abstract="x['abstract']"></SingleNote>
           </template>
         </div>
       </div>
@@ -63,17 +67,16 @@ export default {
   name: 'ContentPage',
   components: {
     SingleNote,
-    ModalWindow
+    ModalWindow,
   },
   props: {
   },
   data() {
     return {
-      username: 'UserName',
-      pagenum: [{id: 1, content: 'hello', tags:['long', 'favor']},
-      {id: 2, content: 'hello2', tags:['long', 'favor2']},
-      {id: 3, content: 'hello3', tags:['long', 'favor3']}],
-      current_tag: 'long',
+      username: null,
+      avatar: null,
+      allNotes: [],
+      current_tag: null,
       current_active_id: null,
       uploading: false
     }
@@ -85,10 +88,48 @@ export default {
     handlechange: function(e) {
       this.$data.current_tag = e;
       console.log(this.$data.current_tag);
+    },
+
+    goToPage: function(page_name) {
+      this.$router.push(page_name);
+    },
+
+    logout() {
+      this.$store.dispatch('logout');
+      window.alert('Log out succeed!');
+      this.$router.push('/');
+    },
   },
-  goToPage: function(page_name) {
-    this.$router.push(page_name);
+  created() {
+    /*
+    Get: 
+    1. User's avatar/username
+    2. All notes
+    */
+    if(!this.$store.getters.userID) {
+      window.alert('Please log in!');
+      this.$router.push('/');
+      return;
     }
-  }
+
+    // 使用箭头函数以避免 this 问题
+    // user info
+    this.$axios.get('/api/user-info').then(response => {
+      const responseData = response.data;
+      this.avatar = responseData.avatar;
+      this.username = responseData.username;
+    }).catch(error => {
+      window.alert(error);
+    });
+
+    // all notes
+    this.$axios.get('/api/all-notes').then(response => {
+      const responseData = response.data;
+      console.log(responseData.notes);
+      this.allNotes = responseData.notes;
+    }).catch(error => {
+      window.alert(error);
+    });
+  },
 }
 </script>

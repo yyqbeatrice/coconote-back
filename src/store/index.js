@@ -3,25 +3,27 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    userId: null
+    userID: localStorage.getItem('userID') || null,  // 从 localStorage 初始化 userId
   },
   mutations: {
-    setUserId(state, userId) {
-      state.userId = userId;
+    setuserID(state, userID) {
+      state.userID = userID;
+      localStorage.setItem('userID', userID);
     },
-    clearUserId(state) {
-      state.userId = null;
+    clearuserID(state) {
+      state.userID = null;
+      localStorage.removeItem('userID');
     }
   },
   actions: {
-    login({ commit }, userId) {
-      commit('setUserId', userId);
+    login({ commit }, userID) {
+      commit('setuserID', userID);
     },
     logout({ commit }) {
-      commit('clearUserId');
+      commit('clearuserID');
     }
   },
   getters: {
-    userId: state => state.userId
+    userID: state => state.userID
   }
 })

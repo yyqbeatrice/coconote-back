@@ -91,3 +91,9 @@
     /* margin-bottom: 3%; */
     cursor: pointer;
 }
+
+#register-page button:hover {
+    background-color: #60B71C;
+    font-size: 30px;
+    color: white;
+}

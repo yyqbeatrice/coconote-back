@@ -1,10 +1,7 @@
 <template>
     <div id="welcome-page">
         <header>
-            <div id="welcome-icon">
-                <img src="../assets/logo.svg">
-                <p>Coconote</p>
-            </div>
+            <LogoIcon></LogoIcon>
         </header>
         <main>
             <img id="welcome-logo" src="../assets/logo.svg">
@@ -18,8 +15,13 @@
 <style src="../css/welcome.css"></style>
 
 <script>
+import LogoIcon from './logo.vue';
+
 export default {
     name: 'WelcomePage',
+    components: {
+        LogoIcon
+    },
     props: {
     },
     data() {

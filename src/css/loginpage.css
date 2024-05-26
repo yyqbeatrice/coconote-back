@@ -88,3 +88,9 @@
 
     margin-top: 60px;
 }
+
+#login-page button:hover {
+    background-color: #60B71C;
+    font-size: 30px;
+    color: white;
+}
