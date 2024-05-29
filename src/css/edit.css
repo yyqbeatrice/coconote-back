@@ -15,20 +15,126 @@
 }
 
 #e-rightup{
-    display: flex;
+    display: flex; 
+    justify-content: flex-end;
     align-items: center;
     width: 100%;
     height: 12%;
 }
 
+.delete{
+    height: 30px;
+    width: 30px;
+    margin-left: 20px;
+}
+
+.save{
+    background: #60B71C;
+    border-radius: 20px;
+    border: 0px;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 40px;
+    margin-left: 20px;
+}
+
+
 #e-rightdown{
+    flex: 1;
     display: flex;
     width: 100%;
     height: 88%;
-    background-color: white;
+    flex-direction: column;
+    margin-right: 40px;
 }
 
-/* this is left */
+.title-input{
+  width: 95%;
+  margin-bottom: 20px; 
+  font-size: 26px; 
+  font-weight: bold;
+  border: 0px;
+  outline: none;
+  padding-left: 5%;
+}
+
+#note_content{
+    padding-left: 5%;
+    padding-right: 40px;
+    /* width: 95%; */
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.content-input {
+    width: 70%;
+    height: 100%;
+    /* margin-bottom: 20px;  */
+    border: 0px;
+    outline: none;
+    font-size: 18px;
+    font-weight: normal;
+    resize: none; 
+}
+
+#todo {
+    height: 100%;
+    width: 30%;
+    flex-direction: column;
+  }
+
+#todo_my{
+    height: 45%;
+    width: 100%;
+    justify-content: left;
+}
+
+.my_title{
+    font-size: 24px;
+    font-weight: bold;
+    color: #C3E85A;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.my{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 100%;
+    background-color: #C3E85A;
+    border-radius: 30px;
+
+}
+
+#todo_other{
+    height: 45%;
+    width: 100%;
+}
+
+.other_title{
+    font-size: 24px;
+    font-weight: bold;
+    color: #BFBFBF;
+    margin-bottom: 0px;
+}
+  
+.other{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 100%;
+    background-color: #F6F8FA;
+    border-radius: 30px;
+}
+
 #e-left {
     display: flex;
     flex-flow: column;

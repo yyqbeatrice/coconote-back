@@ -20,10 +20,25 @@
     </div>
     <div id="e-right">
       <div id="e-rightup">
-        <div id="save"></div>
+        <img src="../assets/return.svg" @click="goToPage('/Content')" class="return">
+        <img src="../assets/delete_active.svg" class="delete">
+        <button class='save' @click="saveNote">Save</button>
       </div>
       <div id="e-rightdown">
-        <div id="words"></div>
+        <input type="note_text" v-model="title" placeholder="Title" class="title-input">
+        <div id="note_content">
+          <textarea v-model="content" placeholder="Content" class="content-input"></textarea>
+          <div id="todo">
+            <div id="todo_my">
+              <p class="my_title">MY TO-DO LIST</p>
+              <div class="my"></div>
+            </div>
+            <div id="todo_other">
+              <p class="other_title">OTHERS' TO-DO LIST</p>
+              <div class="other"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -40,7 +55,9 @@ export default {
   data(){
     return {
       tags: ['happy', 'you'],
-      addTag: null
+      addTag: null,
+      title: '', 
+      content: ''
       // tags: []
     }
   },
@@ -48,8 +65,28 @@ export default {
     saveTag(){
       this.tags.push(this.addTag);
       this.addTag = null;
+    },
+
+    saveNote() {
+      // Log the note data
+      console.log('Title:', this.title);
+      console.log('Content:', this.content);
+      console.log('Tags:', this.tags);
+      
+      // Return the note data
+      return {
+        title: this.title,
+        content: this.content,
+        tags: this.tags
+      };
+    },
+
+    goToPage: function(page_name) {
+      this.$router.push(page_name);
     }
   }
 }
 </script>
+
+
 
