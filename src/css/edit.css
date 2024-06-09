@@ -64,10 +64,15 @@
 #note_content{
     padding-left: 5%;
     padding-right: 40px;
-    /* width: 95%; */
+    /* padding-right: 40px; */
+    /* width: 90%; */
     height: 100%;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+}
+
+#note_content #editor {
+    width: 65%;
 }
 
 .content-input {
@@ -84,13 +89,11 @@
 #todo {
     height: 100%;
     width: 30%;
-    flex-direction: column;
-  }
+}
 
 #todo_my{
     height: 45%;
     width: 100%;
-    justify-content: left;
 }
 
 .my_title{
@@ -102,14 +105,11 @@
 }
 
 .my{
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 90%;
     width: 100%;
     background-color: #C3E85A;
     border-radius: 30px;
-
+    overflow-y: scroll;
 }
 
 #todo_other{
@@ -125,14 +125,11 @@
 }
   
 .other{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 90%;
     width: 100%;
     background-color: #F6F8FA;
     border-radius: 30px;
+    overflow-y: scroll;
 }
 
 #e-left {
@@ -242,5 +239,87 @@
     border-color: #D9D9D9;
 }
 
+.todo-item {
+    width: 100%;
+}
 
+.todo-item .todo-item-content {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding-left: 1%;
+    padding-right: 1%;
+    gap: 10px;
 
+    font-weight: 400;
+    color: black;
+}
+
+.todo-item .todo-item-content img {
+    width: 25px;
+    height: 25px;
+}
+
+.todo-item .todo-item-content p {
+    width: 90%;
+}
+
+.todo-item .todo-item-ddl {
+    box-sizing: border-box;
+    width: 100%;
+    text-align: right;
+    padding-right: 5%;
+    font-weight: bold;
+
+    color: #C3E85A;
+}
+
+.todo-item .h-line {
+    height: 0px;
+    width: 100%;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 2px;
+    border-style: solid;
+    border-color: white;
+}
+
+.todo-item-content.active {
+    color: white;
+}
+
+.todo-item-ddl.active{
+    color: #60B71C;
+}
+
+.todo-item-content input{
+    border: none;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+}
+
+.todo-item-content input::-webkit-datetime-edit {
+    display: none;
+}
+
+.todo-item-content input::-webkit-calendar-picker-indicator {
+    /* display: none; */
+    width: 40px;
+    height: 40px;
+
+    background-image: url('../assets/cld_light.svg');
+    cursor: pointer;
+}
+
+.todo-item-content.active input::-webkit-calendar-picker-indicator {
+    /* display: none; */
+    width: 40px;
+    height: 40px;
+
+    background-image: url('../assets/cld_deep.svg');
+    cursor: pointer;
+}

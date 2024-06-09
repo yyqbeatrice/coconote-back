@@ -1,10 +1,10 @@
 <template>
-  <div class="page">
+  <div class="content-page">
     <div id="upload-mask" v-if="uploading">
       <div id="gray-mask" @click="()=>{uploading=!uploading}"></div>
       <ModalWindow class="modal-overlay"></ModalWindow>
     </div>
-    <div id="left">
+    <div id="content-left">
       <div id="logo"><img src="../assets/coconote.svg" alt="logo"></div>
       <div id="content-menu">
         <div class="active-item">
@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <div id="right">
+    <div id="content-right">
       <div id="rightup">
         <!-- <div id="search"><img src="../assets/search.svg" alt="search"></div> -->
         <div id="user">
@@ -47,9 +47,11 @@
         <div id="frame">
           <template v-for="x in allNotes" :key="x">
             <SingleNote v-if="x['tag'].includes(current_tag) || current_tag === null"
-            :title="x['title']"
-            :tags="x['tag']"
-            :abstract="x['abstract']"></SingleNote>
+              :title="x['title']"
+              :tags="x['tag']"
+              :abstract="x['abstract']"
+              :noteID="x['note_id']">
+            </SingleNote>
           </template>
         </div>
       </div>
@@ -75,7 +77,8 @@ export default {
     return {
       username: null,
       avatar: null,
-      allNotes: [],
+      // allNotes: [],
+      allNotes: [{title: "你好", tag: ["long"], abstract: "没有啊"}],
       current_tag: null,
       current_active_id: null,
       uploading: false

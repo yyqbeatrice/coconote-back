@@ -1,5 +1,5 @@
 
-.page {
+.cld-page {
     position: absolute;
     display: flex;
     width: 100%;
@@ -9,12 +9,12 @@
 }
 
 
-#right {
+#cld-right {
     width: 82%;
     height: 100%;
 }
 
-#rightup{
+#cld-rightup{
     display: flex;
     align-items: center;
     width: 100%;
@@ -22,7 +22,7 @@
     /* background-color: red */
 }
 
-#rightdown{
+#cld-rightdown{
     display: flex;
     width: 100%;
     height: 88%;
@@ -30,21 +30,21 @@
     background-color: white;
 }
 
-#rightdown_left{
+#cld-rightdown_left{
     width: 60%;
     height: 100%;
     border-radius: 0px;
     background-color: white;
 }
 
-#rightdown_left_up{
+#cld-rightdown_left_up{
     /* display: flex; */
     width: 100%;
     height: 55%;
     border-radius: 0px;
 }
 
-#rightdown_left_down {
+#cld-rightdown_left_down {
     position: relative;
     width: 90%;
     height: 45%;
@@ -52,7 +52,7 @@
     margin-left: 40px;
   }
   
-  .coco {
+  .cld-coco {
     position: absolute;
     top: -95px; 
     left: -80px; /* 根据需要调整图片与卡片的重合程度 */
@@ -60,22 +60,76 @@
     height: auto; /* 保持图片的纵横比 */
   }
   
-  .card {
+.cld-card {
     width: 100%;
     height: 80%;
-    border-radius: 30px;
-    background-color: #C3E85A;
     position: relative; 
-  }
+    margin-top: 50px;
 
-#rightdown_right{
+    /* Rectangle 46 */
+
+    box-sizing: border-box;
+
+
+    background: #FFFFFF;
+    border: 6px solid #C3E85A;
+    border-radius: 30px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.cld-card header {
+    width: 150px;
+    height: 100%;
+    /* background-color: #60B71C; */
+
+    text-align: center;
+
+    line-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* padding-top: 25%; */
+    padding-top: 130px;
+    gap: 5%;
+
+    font-size: 20px;
+    font-weight: bold;
+    color: #496561;
+
+}
+
+.cld-card header div {
+    display: block;
+    width: 100%;
+}
+
+.cld-card main {
+    width: 70%;
+    height: 100%;
+    /* background-color: #C3E85A; */
+    display: flex;
+    flex-direction: column;
+
+    /* margin-top: 100px; */
+
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+#cld-rightdown_right{
     width: 50%;
     height: 100%;
     border-radius: 0px;
     background-color: white;
 }
 
-.right_card{
+.cld-right_card{
     margin-left: 30px;
     width: 80%;
     height: 100%;
@@ -84,7 +138,7 @@
 }
 
 /* this is left */
-#left {
+#cld-left {
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -93,11 +147,11 @@
     height: 100%; 
 }
 
-#logo {
+#cld-logo {
     margin-top: 4.6%;
 }
 
-#content-menu {
+#cld-content-menu {
     margin-top: 30%;
     display: flex;
     flex-flow: column;
@@ -105,7 +159,7 @@
     /* background-color: aqua; */
 }
 
-#content-menu .item {
+#cld-content-menu .cld-item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,17 +167,17 @@
     cursor: pointer;
 }
 
-#content-menu img {
+#cld-content-menu img {
     height: 28px;
     width: 28px;
 }
 
-#content-menu p {
+#cld-content-menu p {
     font-size: 20px;
     font-weight: 500;
 }
 
-#content-menu .active-item {
+#cld-content-menu .cld-active-item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,18 +185,18 @@
     cursor: pointer;
 }
 
-#content-menu > .active-item > p {
+#cld-content-menu > .cld-active-item > p {
     color: #60B71C;
     font-weight: bold;
 }
 
-#search {
+#cld-search {
     position: relative;
     left: 50px;
     width: 113px;
 }
 
-#user {
+#cld-user {
     position: absolute;
     align-items: center;
     justify-content: end;
@@ -153,12 +207,12 @@
     display: flex;
 }
 
-#username {
+#cld-username {
     position: relative;
     right: 10px;
 }
 
-.userimg {
+.cld-userimg {
     position: relative;
     width: 50px;
     height: 50px;
@@ -166,13 +220,13 @@
     overflow: hidden;
 }
 
-.userimg img {
+.cld-userimg img {
     width: 100%; /* 设置 img 的宽度为 100% */
     height: 100%; /* 设置 img 的高度为 100% */
     object-fit: cover; 
 }
 
-#new-page-button {
+#cld-new-page-button {
     width: 155px;
     height: 60px;
     top: 613px;
@@ -186,7 +240,7 @@
     cursor: pointer;
 }
 
-.modal-overlay {
+.cld-modal-overlay {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -194,7 +248,7 @@
     z-index: 1000;
 }
 
-#gray-mask {
+#cld-gray-mask {
     /* Rectangle 47 */
 
     position: absolute;
@@ -204,4 +258,38 @@
     background: rgba(191, 191, 191, 0.5);
     border-radius: 10px;
     z-index: 999;
+}
+
+
+.cld-note {
+
+    display: flex;
+    width: 100%;
+    height: 30px;
+
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.cld-note p{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+
+    font-size: 20px;
+    color: black;
+}
+
+.cld-note .cld-bullet-point{
+    width: 10px;
+    height: 10px;
+
+    background-color: #60B71C;
+    border-radius: 10px;
+}
+
+.cld-note-time {
+    text-align: right;
 }

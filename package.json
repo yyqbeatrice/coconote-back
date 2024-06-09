@@ -3,15 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve --host localhost",
+    "serve": "vue-cli-service serve --host 127.0.0.1",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@kangc/v-md-editor": "^2.3.18",
+    "@vueup/vue-quill": "^1.2.0",
+    "ant-design-vue": "^4.2.1",
     "axios": "^1.7.2",
     "core-js": "^3.8.3",
     "crypto-js": "^4.2.0",
     "vue": "^3.2.13",
+    "vue-markdown-render": "^2.2.1",
     "vue-router": "^4.3.2",
     "vuex": "^4.0.2"
   },
